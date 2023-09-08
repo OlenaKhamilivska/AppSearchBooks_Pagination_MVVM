@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PaginationExampleJavaCorrect</string>
+    <string name="Enter_title">Enter title</string>
+    <string name="Search_book">Search book</string>
+</resources>
