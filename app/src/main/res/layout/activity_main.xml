@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/cleaning_hardcover_books_s1"
     tools:context=".view.MainActivity">
 
     <EditText
@@ -36,13 +37,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/ivFr"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:src="@mipmap/cleaning_hardcover_books_s1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

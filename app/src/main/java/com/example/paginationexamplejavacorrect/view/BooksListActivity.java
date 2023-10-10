@@ -18,11 +18,9 @@ import com.example.paginationexamplejavacorrect.viewmodel.BooksListPagedAdapter;
 import com.example.paginationexamplejavacorrect.viewmodel.BooksListViewModel;
 
 public class BooksListActivity extends AppCompatActivity {
-
     private RecyclerView recyclerView;
     private BooksListViewModel booksListViewModel;
     private String query;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

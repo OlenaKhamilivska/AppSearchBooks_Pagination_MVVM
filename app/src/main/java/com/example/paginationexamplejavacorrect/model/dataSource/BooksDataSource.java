@@ -1,5 +1,7 @@
 package com.example.paginationexamplejavacorrect.model.dataSource;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 import androidx.paging.PageKeyedDataSource;
 
@@ -14,7 +16,7 @@ import retrofit2.Response;
 
 public class BooksDataSource extends PageKeyedDataSource<Integer, Books> {
 
-    public static final int first_image = 1;
+    public static final int first_image = 0;
     private QueryPOJO queryPOJO;
 
     @Override
@@ -23,13 +25,14 @@ public class BooksDataSource extends PageKeyedDataSource<Integer, Books> {
         ApiClient.getApiClient().getApiInterface().getProgrammingBooks(queryPOJO.getSearchQueryString(), first_image)
                 .enqueue(new Callback<BooksApiResponce>() {
                     @Override
-                    public void onResponse(Call<BooksApiResponce> call, Response<BooksApiResponce> response) {
+                    public void onResponse(@NonNull Call<BooksApiResponce> call, @NonNull Response<BooksApiResponce> response) {
                         if (response != null) {
                             callback.onResult(response.body().getBooks(), null, first_image+1);
                         }
+                        Log.d("11TAG", "onResponse load Initial: " + response.body().getBooks() + "and" + first_image+1);
                     }
                     @Override
-                    public void onFailure(Call<BooksApiResponce> call, Throwable t) {
+                    public void onFailure(@NonNull Call<BooksApiResponce> call, Throwable t) {
                     }
                 });
     }
@@ -48,6 +51,7 @@ public class BooksDataSource extends PageKeyedDataSource<Integer, Books> {
                             int key = params.key+1;
                             callback.onResult(response.body().getBooks(), key);
                         }
+                        Log.d("11TAG", "onResponse load After: " + response.body().getBooks() + "and" + params.key);
                     }
 
                     @Override
