@@ -34,7 +34,7 @@ public class BooksListPagedAdapter extends PagedListAdapter<Books, BooksListPage
         Books book = getItem(position);
         if (book != null){
             holder.book_titleTV.setText(book.getTitle());
-            holder.book_isbnTV.setText(book.getIsbn13());
+            holder.book_isbnTV.setText(book.getUnicStringValue());
             holder.book_priceTV.setText(book.getPrice());
 
             Picasso.get().load(book.getImage()).placeholder(R.drawable.loading).into(holder.image_IV);
@@ -45,7 +45,7 @@ public class BooksListPagedAdapter extends PagedListAdapter<Books, BooksListPage
     private static DiffUtil.ItemCallback<Books> diffCallback = new DiffUtil.ItemCallback<Books>() {
         @Override
         public boolean areItemsTheSame(@NonNull Books oldItem, @NonNull Books newItem) {
-            return oldItem.getIsbn13() == newItem.getIsbn13();
+            return oldItem.getUnicStringValue().equals(newItem.getUnicStringValue());
         }
 
         @Override

@@ -12,7 +12,7 @@ public class Books {
     private String image;
     @Expose
     @SerializedName("isbn13")
-    private String isbn13;
+    private String unicStringValue;
     @Expose
     @SerializedName("price")
     private String price;
@@ -26,12 +26,12 @@ public class Books {
     @SerializedName("url")
     private String url;
 
-    public String getIsbn13() {
-        return isbn13;
+    public String getUnicStringValue() {
+        return unicStringValue;
     }
 
-    public void setIsbn13(String isbn13) {
-        this.isbn13 = isbn13;
+    public void setUnicStringValue(String unicStringValue) {
+        this.unicStringValue = unicStringValue;
     }
 
     public String getPrice() {

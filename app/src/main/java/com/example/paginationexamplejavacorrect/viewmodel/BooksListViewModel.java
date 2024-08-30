@@ -19,9 +19,11 @@ public class BooksListViewModel extends ViewModel {
     public BooksListViewModel() {
         BooksDataSourceFactory dataSourceFactory = new BooksDataSourceFactory();
         liveDataSource = dataSourceFactory.getBooksLiveData();
+        //configurations for pagedList
         PagedList.Config config = new PagedList.Config.Builder()
                 .setEnablePlaceholders(true)
                 .setPageSize(5)
+                .setPrefetchDistance(10)
                 .build();
         booksPagedList = new LivePagedListBuilder(dataSourceFactory, config)
                 .build();
