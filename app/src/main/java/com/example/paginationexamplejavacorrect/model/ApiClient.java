@@ -12,7 +12,7 @@ public class ApiClient {
     private Retrofit retrofit;
 
     private ApiClient(){
-        Gson json = new GsonBuilder().create();
+        Gson gson = new GsonBuilder().create();
 
         retrofit = new retrofit2.Retrofit.Builder()
                 .baseUrl(Constans.BASE_URL)
